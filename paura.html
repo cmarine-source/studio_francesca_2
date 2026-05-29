@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Baloo+2:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -63,168 +66,316 @@
   </script>
   <style>
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-15px) rotate(5deg); }
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-15px) rotate(5deg);
+      }
     }
+
     @keyframes wiggle {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(-5deg); }
-      75% { transform: rotate(5deg); }
+
+      0%,
+      100% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(-5deg);
+      }
+
+      75% {
+        transform: rotate(5deg);
+      }
     }
+
     @keyframes pulse-soft {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
     }
+
     @keyframes bounce-gentle {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
     }
+
     @keyframes breatheIn {
-      0% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.5); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.5; }
+      0% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.5);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
     }
-    .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
-    .animate-float { animation: float 4s ease-in-out infinite; }
-    .animate-wiggle { animation: wiggle 2s ease-in-out infinite; }
-    .animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
-    .animate-bounce-gentle { animation: bounce-gentle 2s ease-in-out infinite; }
-    .animate-breathe { animation: breatheIn 4s ease-in-out infinite; }
-    .delay-100 { animation-delay: 0.1s; }
-    .delay-200 { animation-delay: 0.2s; }
-    .delay-300 { animation-delay: 0.3s; }
-    .delay-400 { animation-delay: 0.4s; }
-    .delay-500 { animation-delay: 0.5s; }
-    .delay-600 { animation-delay: 0.6s; }
-    .delay-700 { animation-delay: 0.7s; }
-    .delay-800 { animation-delay: 0.8s; }
-    .delay-900 { animation-delay: 0.9s; }
-    .tip-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .animate-wiggle {
+      animation: wiggle 2s ease-in-out infinite;
+    }
+
+    .animate-pulse-soft {
+      animation: pulse-soft 3s ease-in-out infinite;
+    }
+
+    .animate-bounce-gentle {
+      animation: bounce-gentle 2s ease-in-out infinite;
+    }
+
+    .animate-breathe {
+      animation: breatheIn 4s ease-in-out infinite;
+    }
+
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-400 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-500 {
+      animation-delay: 0.5s;
+    }
+
+    .delay-600 {
+      animation-delay: 0.6s;
+    }
+
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+
+    .delay-800 {
+      animation-delay: 0.8s;
+    }
+
+    .delay-900 {
+      animation-delay: 0.9s;
+    }
+
+    .tip-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
     .tip-card:hover {
       transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
-    .step-card { transition: all 0.3s ease; }
+
+    .step-card {
+      transition: all 0.3s ease;
+    }
+
     .step-card:hover {
       transform: translateY(-4px);
     }
+
     .section-reveal {
       opacity: 0;
       transform: translateY(40px);
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     .section-reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
-    .bubble-bg {
-      background: radial-gradient(circle at 20% 80%, rgba(74,222,127,0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(56,189,248,0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 50% 50%, rgba(250,204,21,0.08) 0%, transparent 60%);
+
+    html {
+      scroll-behavior: smooth;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .bubble-bg {
+      background: radial-gradient(circle at 20% 80%, rgba(74, 222, 127, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(250, 204, 21, 0.08) 0%, transparent 60%);
+    }
+
     .hero-kids-gradient {
       background: linear-gradient(135deg, #f0fdf6 0%, #dcfce9 30%, #eff6ff 60%, #fef3c7 100%);
     }
-    .nav-active { border-bottom: 2px solid #0d7a3e; color: #0d7a3e !important; }
+
+    .nav-active {
+      border-bottom: 2px solid #0d7a3e;
+      color: #0d7a3e !important;
+    }
   </style>
 </head>
+
 <body class="bg-white text-gray-800 overflow-x-hidden">
 
   <!-- Navigation -->
-  
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <!-- Logo -->
-        <a href="index.html" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div
+          class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110">
+          <i data-lucide="heart-pulse" class="w-5 h-5 text-white"></i>
+        </div>
+        <div class="hidden sm:block">
+          <div class="font-display text-lg font-bold text-gray-900 leading-tight">Studio Capasso</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] text-brand-600 font-semibold">Odontoiatria</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-6">
+        <a href="index.html"
+          class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors flex items-center gap-1">
+          <i data-lucide="home" class="w-4 h-4"></i> Home
+        </a>
+        <a href="#cosè"
+          class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">Che cos'è la
+          paura?</a>
+        <a href="#consigli"
+          class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">I Consigli</a>
+        <a href="#passi"
+          class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">Passo dopo
+          Passo</a>
+        <a href="#messaggio"
+          class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">Un Messaggio
+          per Te</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
+          <i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>
+        </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu"
+    class="lg:hidden fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-500">
+    <div class="p-6">
+      <div class="flex items-center justify-between mb-10">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center">
             <i data-lucide="heart-pulse" class="w-5 h-5 text-white"></i>
           </div>
-          <div class="hidden sm:block">
-            <div class="font-display text-lg font-bold text-gray-900 leading-tight">Studio Capasso</div>
+          <div>
+            <div class="font-display text-lg font-bold text-gray-900">Studio Capasso</div>
             <div class="text-[10px] uppercase tracking-[0.2em] text-brand-600 font-semibold">Odontoiatria</div>
           </div>
         </a>
-
-        <!-- Desktop Nav -->
-        <div class="hidden lg:flex items-center gap-6">
-          <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors flex items-center gap-1">
-            <i data-lucide="home" class="w-4 h-4"></i> Home
-          </a>
-          <a href="#cosè" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">Che cos'è la paura?</a>
-          <a href="#consigli" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">I Consigli</a>
-          <a href="#passi" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">Passo dopo Passo</a>
-          <a href="#messaggio" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">Un Messaggio per Te</a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="menuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
-          <i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="lg:hidden fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-500">
-      <div class="p-6">
-        <div class="flex items-center justify-between mb-10">
-          <a href="index.html" class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center">
-              <i data-lucide="heart-pulse" class="w-5 h-5 text-white"></i>
-            </div>
-            <div>
-              <div class="font-display text-lg font-bold text-gray-900">Studio Capasso</div>
-              <div class="text-[10px] uppercase tracking-[0.2em] text-brand-600 font-semibold">Odontoiatria</div>
-            </div>
-          </a>
-          <button id="closeMenu" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
+        <button id="closeMenu" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
             <i data-lucide="x" class="w-6 h-6 text-gray-700"></i>
           </button>
-        </div>
-        <div class="space-y-1">
-          <a href="index.html" class="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all flex items-center gap-2">
-            <i data-lucide="home" class="w-5 h-5"></i> Torna alla Home
-          </a>
-          <a href="#cosè" class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">Che cos'è la paura?</a>
-          <a href="#consigli" class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">I Consigli</a>
-          <a href="#passi" class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">Passo dopo Passo</a>
-          <a href="#messaggio" class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">Un Messaggio per Te</a>
-        </div>
+      </div>
+      <div class="space-y-1">
+        <a href="index.html"
+          class="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all flex items-center gap-2">
+          <i data-lucide="home" class="w-5 h-5"></i> Torna alla Home
+        </a>
+        <a href="#cosè"
+          class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">Che
+          cos'è la paura?</a>
+        <a href="#consigli"
+          class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">I
+          Consigli</a>
+        <a href="#passi"
+          class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">Passo
+          dopo Passo</a>
+        <a href="#messaggio"
+          class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">Un
+          Messaggio per Te</a>
       </div>
     </div>
+  </div>
   </nav>
 
   <!-- Hero -->
   <section class="hero-kids-gradient min-h-[70vh] flex items-center relative overflow-hidden pt-20">
     <!-- Floating decorative elements -->
     <div class="absolute top-32 left-8 sm:left-16 w-16 h-16 bg-kids-yellow/20 rounded-full animate-float"></div>
-    <div class="absolute top-48 right-12 sm:right-24 w-12 h-12 bg-kids-sky/20 rounded-full animate-float delay-300"></div>
+    <div class="absolute top-48 right-12 sm:right-24 w-12 h-12 bg-kids-sky/20 rounded-full animate-float delay-300">
+    </div>
     <div class="absolute bottom-32 left-20 w-10 h-10 bg-kids-purple/20 rounded-full animate-float delay-500"></div>
     <div class="absolute bottom-20 right-16 w-20 h-20 bg-brand-200/20 rounded-full animate-float delay-200"></div>
     <div class="absolute top-24 right-1/3 w-8 h-8 bg-kids-pink/15 rounded-full animate-float delay-700"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10">
       <div class="text-center max-w-3xl mx-auto">
-        <div class="animate-fadeInUp inline-flex items-center gap-2 bg-white/80 backdrop-blur-md rounded-full px-5 py-2 text-sm font-semibold text-brand-600 mb-6 shadow-sm">
+        <div
+          class="animate-fadeInUp inline-flex items-center gap-2 bg-white/80 backdrop-blur-md rounded-full px-5 py-2 text-sm font-semibold text-brand-600 mb-6 shadow-sm">
           🧒 Pagina dedicata ai bambini
         </div>
-        <h1 class="animate-fadeInUp delay-100 font-fun text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+        <h1
+          class="animate-fadeInUp delay-100 font-fun text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
           Come superare la <span class="text-brand-600">paura</span> del dentista 💪
         </h1>
         <p class="animate-fadeInUp delay-200 text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-          Avere paura è normale, ma puoi imparare a sentirti più tranquillo! Ecco alcuni consigli pensati proprio per te. 🌟
+          Avere paura è normale, ma puoi imparare a sentirti più tranquillo! Ecco alcuni consigli pensati proprio per
+          te. 🌟
         </p>
         <div class="animate-fadeInUp delay-300 flex flex-wrap justify-center gap-4">
-          <a href="#consigli" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-brand-600/30">
+          <a href="#consigli"
+            class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-brand-600/30">
             <i data-lucide="lightbulb" class="w-5 h-5"></i>
             Scopri i consigli
           </a>
-          <a href="#cosè" class="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 font-bold px-8 py-4 rounded-xl transition-all shadow-sm">
+          <a href="#cosè"
+            class="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 font-bold px-8 py-4 rounded-xl transition-all shadow-sm">
             <i data-lucide="book-open" class="w-5 h-5"></i>
             Cos'è la paura?
           </a>
@@ -240,63 +391,50 @@
         <div class="order-2 lg:order-1">
           <span class="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm uppercase tracking-[0.15em] mb-4">
             <span class="w-8 h-[2px] bg-brand-500"></span>
-            Capire le emozioni
+          Capire le emozioni
           </span>
           <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
             Che cos'è la <span class="text-brand-600">paura</span>? 🤔
           </h2>
           <p class="text-gray-600 leading-relaxed mb-6 text-lg">
-            La paura è un'emozione che tutti proviamo, proprio come la gioia, la tristezza o la rabbia. È come un <strong class="text-gray-800">piccolo allarme</strong> dentro di noi che ci avvisa quando qualcosa ci sembra difficile o sconosciuto.
+            La paura è un'emozione che tutti proviamo, proprio come la gioia, la tristezza o la rabbia. È come un
+            <strong class="text-gray-800">piccolo allarme</strong> dentro di noi che ci avvisa quando qualcosa ci sembra
+            difficile o sconosciuto.
           </p>
           <p class="text-gray-600 leading-relaxed mb-6 text-lg">
-            Immagina di entrare in una stanza nuova dove non sei mai stato: è normale sentire un po' di ansia perché non sai cosa troverai, vero? <strong class="text-gray-800">Ecco, la paura del dentista è un po' così!</strong>
+            Immagina di entrare in una stanza nuova dove non sei mai stato: è normale sentire un po' di ansia perché non
+            sai cosa troverai, vero? <strong class="text-gray-800">Ecco, la paura del dentista è un po' così!</strong>
           </p>
           <div class="bg-brand-50 border border-brand-100 rounded-2xl p-6">
             <div class="flex items-start gap-4">
               <div class="text-4xl">💜</div>
               <div>
                 <h3 class="font-bold text-gray-900 text-lg mb-2">La cosa più importante da ricordare</h3>
-                <p class="text-gray-600">Avere paura non significa essere deboli o sbagliati. <strong class="text-gray-800">Anche gli adulti hanno paura!</strong> È un segno che il tuo corpo sta facendo il suo lavoro: cercare di proteggerti. E tu sei qui perché vuoi prendere cura di te. Questo è già molto coraggioso! 🌟</p>
+                <p class="text-gray-600">Avere paura non significa essere deboli o sbagliati.
+                  <strong class="text-gray-800">Anche gli adulti hanno paura!</strong> È un segno che il tuo corpo sta
+                  facendo il suo lavoro: cercare di proteggerti. E tu sei qui perché vuoi prendere cura di te. Questo è
+                  già molto coraggioso! 🌟</p>
               </div>
             </div>
           </div>
         </div>
+<!-- Visual side -->
+<div class="order-1 lg:order-2 flex justify-center">
+  <div class="relative w-full max-w-md">
 
-        <!-- Visual side -->
-        <div class="order-1 lg:order-2 flex justify-center">
-          <div class="relative w-full max-w-md">
-            <div class="bg-gradient-to-br from-brand-50 via-white to-kids-sky/10 rounded-3xl p-8 shadow-xl">
-              <!-- Emotion faces -->
-              <div class="grid grid-cols-2 gap-4">
-                <div class="bg-white rounded-2xl p-5 text-center shadow-sm hover:scale-105 transition-transform">
-                  <div class="text-5xl mb-3">😰</div>
-                  <p class="font-semibold text-gray-700 text-sm">Ansia</p>
-                  <p class="text-gray-400 text-xs">È normale</p>
-                </div>
-                <div class="bg-white rounded-2xl p-5 text-center shadow-sm hover:scale-105 transition-transform">
-                  <div class="text-5xl mb-3">🤔</div>
-                  <p class="font-semibold text-gray-700 text-sm">Curiosità</p>
-                  <p class="text-gray-400 text-xs">Un passo avanti</p>
-                </div>
-                <div class="bg-white rounded-2xl p-5 text-center shadow-sm hover:scale-105 transition-transform">
-                  <div class="text-5xl mb-3">😊</div>
-                  <p class="font-semibold text-gray-700 text-sm">Tranquillità</p>
-                  <p class="text-gray-400 text-xs">Ci puoi arrivare</p>
-                </div>
-                <div class="bg-white rounded-2xl p-5 text-center shadow-sm hover:scale-105 transition-transform">
-                  <div class="text-5xl mb-3">😁</div>
-                  <p class="font-semibold text-gray-700 text-sm">Sicurezza</p>
-                  <p class="text-gray-400 text-xs">Il tuo obiettivo</p>
-                </div>
-              </div>
-            </div>
-            <div class="absolute -top-4 -right-4 w-16 h-16 bg-kids-yellow/30 rounded-full animate-pulse-soft"></div>
-            <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-kids-sky/20 rounded-full animate-pulse-soft delay-500"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <img
+      src="https://picsum.photos/600/600"
+      alt="Immagine di esempio"
+      class="w-full rounded-3xl shadow-xl object-cover"
+    />
+
+    <div class="absolute -top-4 -right-4 w-16 h-16 bg-kids-yellow/30 rounded-full animate-pulse-soft"></div>
+    <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-kids-sky/20 rounded-full animate-pulse-soft delay-500"></div>
+
+  </div>
+</div>
   </section>
+
 
   <!-- Consigli pratici -->
   <section id="consigli" class="py-20 lg:py-28 bubble-bg section-reveal">
@@ -304,26 +442,29 @@
       <div class="text-center mb-16">
         <span class="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm uppercase tracking-[0.15em] mb-4">
           <span class="w-8 h-[2px] bg-brand-500"></span>
-          I tuoi strumenti
-          <span class="w-8 h-[2px] bg-brand-500"></span>
+        I tuoi strumenti
+        <span class="w-8 h-[2px] bg-brand-500"></span>
         </span>
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
           Consigli pratici per <span class="text-brand-600">sentirti più tranquillo</span> 🌈
         </h2>
         <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-          Ecco i trucchi che ti aiuteranno a stare meglio durante la visita dal dentista. Provali tutti e scopri quale funziona meglio per te!
+          Ecco i trucchi che ti aiuteranno a stare meglio durante la visita dal dentista. Provali tutti e scopri quale
+          funziona meglio per te!
         </p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Tip 1: Respirare -->
         <div class="tip-card bg-white rounded-2xl p-7 border border-gray-100 shadow-sm text-center">
-          <div class="w-20 h-20 bg-kids-sky/10 rounded-2xl flex items-center justify-center mx-auto mb-5 animate-pulse-soft">
+          <div
+            class="w-20 h-20 bg-kids-sky/10 rounded-2xl flex items-center justify-center mx-auto mb-5 animate-pulse-soft">
             <span class="text-5xl">🌬️</span>
           </div>
           <h3 class="font-bold text-gray-900 text-xl mb-3 font-fun">Respira profondamente</h3>
           <p class="text-gray-600 leading-relaxed mb-4">
-            Quando ti senti nervoso, prova a fare respiri lenti e profondi. Immagina di gonfiare un palloncino nella pancia!
+            Quando ti senti nervoso, prova a fare respiri lenti e profondi. Immagina di gonfiare un palloncino nella
+            pancia!
           </p>
           <div class="bg-kids-sky/10 rounded-xl p-4">
             <div class="w-12 h-12 bg-kids-sky/20 rounded-full flex items-center justify-center mx-auto animate-breathe">
@@ -335,12 +476,14 @@
 
         <!-- Tip 2: Parlare con un adulto -->
         <div class="tip-card bg-white rounded-2xl p-7 border border-gray-100 shadow-sm text-center">
-          <div class="w-20 h-20 bg-kids-purple/10 rounded-2xl flex items-center justify-center mx-auto mb-5 animate-pulse-soft delay-200">
+          <div
+            class="w-20 h-20 bg-kids-purple/10 rounded-2xl flex items-center justify-center mx-auto mb-5 animate-pulse-soft delay-200">
             <span class="text-5xl">🗣️</span>
           </div>
           <h3 class="font-bold text-gray-900 text-xl mb-3 font-fun">Parla con un adulto</h3>
           <p class="text-gray-600 leading-relaxed mb-4">
-            Racconta a mamma, papà o a chi ti accompagna come ti senti. Dire "ho paura" è già un grande passo, non tenere tutto dentro!
+            Racconta a mamma, papà o a chi ti accompagna come ti senti. Dire "ho paura" è già un grande passo, non
+            tenere tutto dentro!
           </p>
           <div class="bg-kids-purple/10 rounded-xl p-4">
             <span class="text-3xl">🤗</span>
@@ -350,12 +493,14 @@
 
         <!-- Tip 3: Immagina un luogo sicuro -->
         <div class="tip-card bg-white rounded-2xl p-7 border border-gray-100 shadow-sm text-center">
-          <div class="w-20 h-20 bg-kids-yellow/10 rounded-2xl flex items-center justify-center mx-auto mb-5 animate-pulse-soft delay-400">
+          <div
+            class="w-20 h-20 bg-kids-yellow/10 rounded-2xl flex items-center justify-center mx-auto mb-5 animate-pulse-soft delay-400">
             <span class="text-5xl">🏝️</span>
           </div>
           <h3 class="font-bold text-gray-900 text-xl mb-3 font-fun">Immagina il tuo posto felice</h3>
           <p class="text-gray-600 leading-relaxed mb-4">
-            Chiudi gli occhi e pensa al posto dove sei più felice: il mare, un prato di fiori, con il tuo animale preferito. Lascia che la mente voli lì!
+            Chiudi gli occhi e pensa al posto dove sei più felice: il mare, un prato di fiori, con il tuo animale
+            preferito. Lascia che la mente voli lì!
           </p>
           <div class="bg-kids-yellow/10 rounded-xl p-4">
             <span class="text-3xl">✨</span>
@@ -365,12 +510,14 @@
 
         <!-- Tip 4: Piccoli passi -->
         <div class="tip-card bg-white rounded-2xl p-7 border border-gray-100 shadow-sm text-center">
-          <div class="w-20 h-20 bg-kids-orange/10 rounded-2xl flex items-center justify-center mx-auto mb-5 animate-pulse-soft delay-600">
+          <div
+            class="w-20 h-20 bg-kids-orange/10 rounded-2xl flex items-center justify-center mx-auto mb-5 animate-pulse-soft delay-600">
             <span class="text-5xl">🪜</span>
           </div>
           <h3 class="font-bold text-gray-900 text-xl mb-3 font-fun">Procedi per piccoli passi</h3>
           <p class="text-gray-600 leading-relaxed mb-4">
-            Non devi fare tutto subito! Puoi iniziare solo visitando lo studio, poi provando a sederti sulla poltrona, un passo alla volta, come una scala.
+            Non devi fare tutto subito! Puoi iniziare solo visitando lo studio, poi provando a sederti sulla poltrona,
+            un passo alla volta, come una scala.
           </p>
           <div class="bg-kids-orange/10 rounded-xl p-4">
             <span class="text-3xl">🏆</span>
@@ -387,8 +534,8 @@
       <div class="text-center mb-16">
         <span class="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm uppercase tracking-[0.15em] mb-4">
           <span class="w-8 h-[2px] bg-brand-500"></span>
-          Storie per te
-          <span class="w-8 h-[2px] bg-brand-500"></span>
+        Storie per te
+        <span class="w-8 h-[2px] bg-brand-500"></span>
         </span>
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
           Qualche esempio <span class="text-brand-600">per capire meglio</span> 💡
@@ -400,29 +547,40 @@
 
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Example 1 -->
-        <div class="bg-gradient-to-br from-kids-sky/10 to-white rounded-2xl p-8 border border-kids-sky/20 hover:shadow-lg transition-shadow">
+        <div
+          class="bg-gradient-to-br from-kids-sky/10 to-white rounded-2xl p-8 border border-kids-sky/20 hover:shadow-lg transition-shadow">
           <div class="text-6xl mb-6 text-center">🏊</div>
           <h3 class="font-bold text-gray-900 text-xl mb-3 font-fun text-center">Come quando hai imparato a nuotare</h3>
           <p class="text-gray-600 leading-relaxed">
-            Ricordi la prima volta in piscina? L'acqua sembrava fredda e profonda, e avevi un po' paura. Ma piano piano, con qualcuno che ti aiutava, hai scoperto che era divertente! <strong class="text-gray-800">Dal dentista è la stessa cosa:</strong> all'inizio sembra difficile, ma poi diventa sempre più facile.
+            Ricordi la prima volta in piscina? L'acqua sembrava fredda e profonda, e avevi un po' paura. Ma piano piano,
+            con qualcuno che ti aiutava, hai scoperto che era divertente!
+            <strong class="text-gray-800">Dal dentista è la stessa cosa:</strong> all'inizio sembra difficile, ma poi
+            diventa sempre più facile.
           </p>
         </div>
 
         <!-- Example 2 -->
-        <div class="bg-gradient-to-br from-kids-purple/10 to-white rounded-2xl p-8 border border-kids-purple/20 hover:shadow-lg transition-shadow">
+        <div
+          class="bg-gradient-to-br from-kids-purple/10 to-white rounded-2xl p-8 border border-kids-purple/20 hover:shadow-lg transition-shadow">
           <div class="text-6xl mb-6 text-center">🎒</div>
           <h3 class="font-bold text-gray-900 text-xl mb-3 font-fun text-center">Come il primo giorno di scuola</h3>
           <p class="text-gray-600 leading-relaxed">
-            Il primo giorno di scuola non conoscevi nessuno e avevi le farfalle nella pancia. E poi? Hai fatto un sacco di amici e ti sei divertito! <strong class="text-gray-800">La prima visita dal dentista è il tuo primo giorno di scuola:</strong> tutto nuovo, ma presto ti sentirai a casa.
+            Il primo giorno di scuola non conoscevi nessuno e avevi le farfalle nella pancia. E poi? Hai fatto un sacco
+            di amici e ti sei divertito!
+            <strong class="text-gray-800">La prima visita dal dentista è il tuo primo giorno di scuola:</strong> tutto
+            nuovo, ma presto ti sentirai a casa.
           </p>
         </div>
 
         <!-- Example 3 -->
-        <div class="bg-gradient-to-br from-kids-orange/10 to-white rounded-2xl p-8 border border-kids-orange/20 hover:shadow-lg transition-shadow">
+        <div
+          class="bg-gradient-to-br from-kids-orange/10 to-white rounded-2xl p-8 border border-kids-orange/20 hover:shadow-lg transition-shadow">
           <div class="text-6xl mb-6 text-center">🚲</div>
           <h3 class="font-bold text-gray-900 text-xl mb-3 font-fun text-center">Come imparare ad andare in bici</h3>
           <p class="text-gray-600 leading-relaxed">
-            All'inizio pensavi: "Non ce la farò mai!" Ma con le ruotine laterali e poi senza, un pedale alla volta, ci sei riuscito! <strong class="text-gray-800">Superare la paura è uguale:</strong> un piccolo passo alla volta, e alla volta ce la farai!
+            All'inizio pensavi: "Non ce la farò mai!" Ma con le ruotine laterali e poi senza, un pedale alla volta, ci
+            sei riuscito! <strong class="text-gray-800">Superare la paura è uguale:</strong> un piccolo passo alla
+            volta, e alla volta ce la farai!
           </p>
         </div>
       </div>
@@ -435,14 +593,15 @@
       <div class="text-center mb-16">
         <span class="inline-flex items-center gap-2 text-brand-300 font-semibold text-sm uppercase tracking-[0.15em] mb-4">
           <span class="w-8 h-[2px] bg-brand-400"></span>
-          La tua avventura
-          <span class="w-8 h-[2px] bg-brand-400"></span>
+        La tua avventura
+        <span class="w-8 h-[2px] bg-brand-400"></span>
         </span>
         <h2 class="font-display text-3xl sm:text-4xl font-bold mb-6">
           Passo dopo passo, <span class="text-brand-300 italic">ce la farai</span> 🚀
         </h2>
         <p class="text-gray-300 text-lg max-w-2xl mx-auto">
-          Non devi fare tutto subito. Ecco come puoi procedere un piccolo passo alla volta, proprio come un eroe che parte per un'avventura!
+          Non devi fare tutto subito. Ecco come puoi procedere un piccolo passo alla volta, proprio come un eroe che
+          parte per un'avventura!
         </p>
       </div>
 
@@ -456,11 +615,13 @@
             <div class="flex-1 lg:text-right order-2 lg:order-1">
               <div class="glass-card rounded-2xl p-6 border border-white/10">
                 <h3 class="font-bold text-xl mb-2 font-fun">🌟 Passo 1: Parla della tua paura</h3>
-                <p class="text-gray-300">Racconta a un adulto come ti senti. Dire "ho paura" è il primo atto di coraggio. Il dentista è abituato a sentirlo e sa esattamente come aiutarti!</p>
+                <p class="text-gray-300">Racconta a un adulto come ti senti. Dire "ho paura" è il primo atto di
+                  coraggio. Il dentista è abituato a sentirlo e sa esattamente come aiutarti!</p>
               </div>
             </div>
             <div class="relative z-10 order-1 lg:order-2">
-              <div class="w-16 h-16 bg-kids-yellow rounded-full flex items-center justify-center text-2xl font-bold shadow-lg shadow-kids-yellow/30">
+              <div
+                class="w-16 h-16 bg-kids-yellow rounded-full flex items-center justify-center text-2xl font-bold shadow-lg shadow-kids-yellow/30">
                 1️⃣
               </div>
             </div>
@@ -471,14 +632,17 @@
           <div class="step-card flex flex-col lg:flex-row items-center gap-6 lg:gap-12">
             <div class="flex-1 hidden lg:block order-1"></div>
             <div class="relative z-10 order-1 lg:order-2">
-              <div class="w-16 h-16 bg-kids-sky rounded-full flex items-center justify-center text-2xl font-bold shadow-lg shadow-kids-sky/30">
+              <div
+                class="w-16 h-16 bg-kids-sky rounded-full flex items-center justify-center text-2xl font-bold shadow-lg shadow-kids-sky/30">
                 2️⃣
               </div>
             </div>
             <div class="flex-1 order-2 lg:order-3">
               <div class="glass-card rounded-2xl p-6 border border-white/10">
                 <h3 class="font-bold text-xl mb-2 font-fun">🏥 Passo 2: Visita lo studio</h3>
-                <p class="text-gray-300">Vieni a vedere come è fatto lo studio! Scopri la sala d'attesa, la poltrona del dentista (che sembra una comoda sdraio!), e i giochi luminosi che usiamo per controllare i tuoi denti.</p>
+                <p class="text-gray-300">Vieni a vedere come è fatto lo studio! Scopri la sala d'attesa, la poltrona del
+                  dentista (che sembra una comoda sdraio!), e i giochi luminosi che usiamo per controllare i tuoi denti.
+                </p>
               </div>
             </div>
           </div>
@@ -488,11 +652,14 @@
             <div class="flex-1 lg:text-right order-2 lg:order-1">
               <div class="glass-card rounded-2xl p-6 border border-white/10">
                 <h3 class="font-bold text-xl mb-2 font-fun">😊 Passo 3: Mettiti comodo</h3>
-                <p class="text-gray-300">Siediti sulla poltrona senza dover fare nient'altro! Puoi chiedere di ascoltare la tua canzone preferita, portare il tuo pupazzo, o semplicemente provare come è comoda quella poltrona.</p>
+                <p class="text-gray-300">Siediti sulla poltrona senza dover fare nient'altro! Puoi chiedere di ascoltare
+                  la tua canzone preferita, portare il tuo pupazzo, o semplicemente provare come è comoda quella
+                  poltrona.</p>
               </div>
             </div>
             <div class="relative z-10 order-1 lg:order-2">
-              <div class="w-16 h-16 bg-kids-purple rounded-full flex items-center justify-center text-2xl font-bold shadow-lg shadow-kids-purple/30">
+              <div
+                class="w-16 h-16 bg-kids-purple rounded-full flex items-center justify-center text-2xl font-bold shadow-lg shadow-kids-purple/30">
                 3️⃣
               </div>
             </div>
@@ -503,14 +670,16 @@
           <div class="step-card flex flex-col lg:flex-row items-center gap-6 lg:gap-12">
             <div class="flex-1 hidden lg:block order-1"></div>
             <div class="relative z-10 order-1 lg:order-2">
-              <div class="w-16 h-16 bg-kids-orange rounded-full flex items-center justify-center text-2xl font-bold shadow-lg shadow-kids-orange/30">
+              <div
+                class="w-16 h-16 bg-kids-orange rounded-full flex items-center justify-center text-2xl font-bold shadow-lg shadow-kids-orange/30">
                 4️⃣
               </div>
             </div>
             <div class="flex-1 order-2 lg:order-3">
               <div class="glass-card rounded-2xl p-6 border border-white/10">
                 <h3 class="font-bold text-xl mb-2 font-fun">🪥 Passo 4: Facciamo conoscenza</h3>
-                <p class="text-gray-300">Il dentista ti farà vedere tutti gli strumenti e ti spiegherà cosa fa ognuno. Potrai chiedere tutto quello che vuoi sapere! È come una visita guidata del tuo sorriso.</p>
+                <p class="text-gray-300">Il dentista ti farà vedere tutti gli strumenti e ti spiegherà cosa fa ognuno.
+                  Potrai chiedere tutto quello che vuoi sapere! È come una visita guidata del tuo sorriso.</p>
               </div>
             </div>
           </div>
@@ -520,11 +689,13 @@
             <div class="flex-1 lg:text-right order-2 lg:order-1">
               <div class="glass-card rounded-2xl p-6 border border-white/10">
                 <h3 class="font-bold text-xl mb-2 font-fun">🏆 Passo 5: Ce l'hai fatta!</h3>
-                <p class="text-gray-300">Dopo la prima visita, sarai super fiero di te! E ricorda: ogni volta che torni, sarà sempre più facile. Sei un eroe del sorriso! 🦸‍♂️</p>
+                <p class="text-gray-300">Dopo la prima visita, sarai super fiero di te! E ricorda: ogni volta che torni,
+                  sarà sempre più facile. Sei un eroe del sorriso! 🦸‍♂️</p>
               </div>
             </div>
             <div class="relative z-10 order-1 lg:order-2">
-              <div class="w-16 h-16 bg-brand-400 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg shadow-brand-400/30">
+              <div
+                class="w-16 h-16 bg-brand-400 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg shadow-brand-400/30">
                 5️⃣
               </div>
             </div>
@@ -543,20 +714,26 @@
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
           Un messaggio <span class="text-brand-600">speciale</span> per te ✨
         </h2>
-        
+
         <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-brand-100 mb-10 relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-kids-sky via-kids-yellow to-kids-purple"></div>
+          <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-kids-sky via-kids-yellow to-kids-purple">
+          </div>
           <p class="text-gray-700 text-lg leading-relaxed mb-6 font-fun">
             Caro bambino o bambina,
           </p>
           <p class="text-gray-700 text-lg leading-relaxed mb-6">
-            <strong class="text-brand-600">Sappi che sei molto coraggioso</strong> anche solo per essere qui a leggere questa pagina. Avere paura è una cosa che fanno le persone forti, perché le persone forti sentono le emozioni e le affrontano.
+            <strong class="text-brand-600">Sappi che sei molto coraggioso</strong> anche solo per essere qui a leggere
+            questa pagina. Avere paura è una cosa che fanno le persone forti, perché le persone forti sentono le
+            emozioni e le affrontano.
           </p>
           <p class="text-gray-700 text-lg leading-relaxed mb-6">
-            Nel nostro studio, <strong class="text-brand-600">non devi preoccuparti</strong>. Saremo noi a prenderci cura di te, con tanta gentilezza e pazienza. Se vuoi fermarti, basta alzare la mano: <strong>sei tu il protagonista</strong>, e noi saremo lì con te ad ogni passo.
+            Nel nostro studio, <strong class="text-brand-600">non devi preoccuparti</strong>. Saremo noi a prenderci
+            cura di te, con tanta gentilezza e pazienza. Se vuoi fermarti, basta alzare la mano:
+            <strong>sei tu il protagonista</strong>, e noi saremo lì con te ad ogni passo.
           </p>
           <p class="text-gray-700 text-lg leading-relaxed mb-6">
-            E ricorda: <strong class="text-brand-600">ogni grande eroe ha avuto paura prima di diventare un eroe!</strong> 💪
+            E ricorda:
+            <strong class="text-brand-600">ogni grande eroe ha avuto paura prima di diventare un eroe!</strong> 💪
           </p>
           <div class="flex justify-center items-center gap-2 text-4xl mt-4">
             <span class="animate-wiggle">⭐</span>
@@ -568,11 +745,13 @@
         </div>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="index.html" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-brand-600/30">
+          <a href="index.html"
+            class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-brand-600/30">
             <i data-lucide="arrow-left" class="w-5 h-5"></i>
             Torna alla Home
           </a>
-          <a href="index.html#contatti" class="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 font-bold px-8 py-4 rounded-xl transition-all shadow-sm border border-gray-200">
+          <a href="index.html#contatti"
+            class="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 font-bold px-8 py-4 rounded-xl transition-all shadow-sm border border-gray-200">
             <i data-lucide="phone" class="w-5 h-5"></i>
             Contatta lo Studio
           </a>
@@ -597,7 +776,8 @@
         <div class="flex items-center gap-6">
           <a href="index.html" class="text-sm text-gray-400 hover:text-brand-400 transition-colors">Home</a>
           <a href="index.html#servizi" class="text-sm text-gray-400 hover:text-brand-400 transition-colors">Servizi</a>
-          <a href="index.html#contatti" class="text-sm text-gray-400 hover:text-brand-400 transition-colors">Contatti</a>
+          <a href="index.html#contatti"
+            class="text-sm text-gray-400 hover:text-brand-400 transition-colors">Contatti</a>
         </div>
         <p class="text-sm text-gray-500">&copy; 2024 Studio Capasso</p>
       </div>
@@ -645,4 +825,5 @@
     });
   </script>
 </body>
+
 </html>
