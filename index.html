@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Odontoiatrico Dott.ssa Francesca Capasso</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf6',
+              100: '#dcfce9',
+              200: '#bbf7d4',
+              300: '#86efad',
+              400: '#4ade7f',
+              500: '#16a352',
+              600: '#0d7a3e',
+              700: '#0a5c2e',
+              800: '#074d26',
+              900: '#053d1e',
+              950: '#022512',
+            },
+            accent: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+            },
+            warm: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+            },
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+    .animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; opacity: 0; }
+    .animate-scaleIn { animation: scaleIn 0.6s ease-out forwards; opacity: 0; }
+    .animate-slideRight { animation: slideRight 0.7s ease-out forwards; opacity: 0; }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-500 { animation-delay: 0.5s; }
+    .delay-600 { animation-delay: 0.6s; }
+    .hero-gradient {
+      background: linear-gradient(135deg, rgba(5,61,30,0.92) 0%, rgba(13,122,62,0.85) 50%, rgba(5,61,30,0.88) 100%);
+    }
+    .glass-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .service-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(13,122,62,0.2);
+    }
+    .service-card .icon-wrapper {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .service-card:hover .icon-wrapper {
+      background: #0d7a3e;
+      color: white;
+      transform: scale(1.1);
+    }
+    .tech-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .tech-card:hover {
+      transform: translateY(-4px);
+      border-color: #0d7a3e;
+    }
+    .testimonial-card {
+      transition: all 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .value-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .value-card:hover {
+      transform: translateY(-4px);
+      border-color: #0d7a3e;
+    }
+    .value-card:hover .value-icon {
+      background: #0d7a3e;
+      color: white;
+    }
+    .section-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .section-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .nav-active { border-bottom: 2px solid #0d7a3e; color: #0d7a3e !important; }
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: #dcfce9;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 overflow-x-hidden">
+
+  <!-- Navigation -->
+  
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110">
+            <i data-lucide="heart-pulse" class="w-5 h-5 text-white"></i>
+          </div>
+          <div class="hidden sm:block">
+            <div class="font-display text-lg font-bold text-gray-900 leading-tight">Studio Capasso</div>
+            <div class="text-[10px] uppercase tracking-[0.2em] text-brand-600 font-semibold">Odontoiatria</div>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="#chi-siamo" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">Chi Siamo</a>
+          <a href="#servizi" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">Servizi</a>
+          <a href="#tecnologie" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">Tecnologie</a>
+          <a href="#perché-noi" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">Perché Noi</a>
+          <a href="#testimonianze" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">Testimonianze</a>
+          <a href="#contatti" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors py-1">Contatti</a>
+          <a href="paura.html" class="ml-2 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700 bg-brand-50 px-4 py-2 rounded-full transition-all hover:bg-brand-100">
+            <i data-lucide="smile" class="w-4 h-4"></i>
+            Per i Bambini
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
+          <i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-500">
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-10">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center">
+              <i data-lucide="heart-pulse" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+              <div class="font-display text-lg font-bold text-gray-900">Studio Capasso</div>
+              <div class="text-[10px] uppercase tracking-[0.2em] text-brand-600 font-semibold">Odontoiatria</div>
+            </div>
+          </div>
+          <button id="closeMenu" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
+            <i data-lucide="x" class="w-6 h-6 text-gray-700"></i>
+          </button>
+        </div>
+        <div class="space-y-1">
+          <a href="#chi-siamo" class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">Chi Siamo</a>
+          <a href="#servizi" class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">Servizi</a>
+          <a href="#tecnologie" class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">Tecnologie</a>
+          <a href="#perché-noi" class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">Perché Noi</a>
+          <a href="#testimonianze" class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">Testimonianze</a>
+          <a href="#contatti" class="mobile-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-all">Contatti</a>
+          <a href="paura.html" class="block px-4 py-3 text-lg font-semibold text-brand-600 bg-brand-50 rounded-xl mt-4 flex items-center gap-2">
+            <i data-lucide="smile" class="w-5 h-5"></i>
+            Per i Bambini
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center">
+    <div class="absolute inset-0">
+      <img src="http://static.photos/medical/1200x630/42" alt="Studio dentistico moderno" class="w-full h-full object-cover" loading="eager">
+      <div class="hero-gradient absolute inset-0"></div>
+    </div>
+    <!-- Decorative Elements -->
+    <div class="absolute top-20 right-10 w-64 h-64 bg-brand-400/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-20 left-10 w-48 h-48 bg-warm-400/10 rounded-full blur-3xl animate-float delay-300"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="max-w-xl">
+          <div class="animate-fadeInUp">
+            <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 text-sm text-brand-200 font-medium mb-6">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              Cura, prevenzione e benessere
+            </span>
+          </div>
+          <h1 class="animate-fadeInUp delay-100 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            Studio Dentistico di <span class="text-brand-200 italic">Eccellenza</span>
+          </h1>
+          <p class="animate-fadeInUp delay-200 text-lg text-gray-200 leading-relaxed mb-8 font-light">
+            Cura, prevenzione e benessere per la salute del tuo sorriso. Un approccio che combina competenza professionale, tecnologie innovative e una profonda attenzione al benessere del paziente.
+          </p>
+          <div class="animate-fadeInUp delay-300 flex flex-wrap gap-4 mb-10">
+            <a href="#contatti" class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-400 text-white font-semibold px-8 py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-brand-500/30 hover:-translate-y-0.5">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              Contattaci
+            </a>
+            <a href="#servizi" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-semibold px-8 py-4 rounded-xl transition-all">
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+              Scopri i servizi
+            </a>
+          </div>
+          <div class="animate-fadeInUp delay-400 flex flex-wrap gap-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center border border-white/20">
+                <i data-lucide="shield-check" class="w-5 h-5 text-brand-300"></i>
+              </div>
+              <span class="text-white/90 text-sm font-medium">Prevenzione specializzata</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center border border-white/20">
+                <i data-lucide="cpu" class="w-5 h-5 text-brand-300"></i>
+              </div>
+              <span class="text-white/90 text-sm font-medium">Tecnologie all'avanguardia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side visual -->
+        <div class="hidden lg:block animate-scaleIn delay-500">
+          <div class="relative">
+            <div class="glass-card rounded-3xl p-8 relative z-10">
+              <div class="quote-mark mb-2">"</div>
+              <p class="text-white text-xl font-display italic leading-relaxed mb-6">
+                La cura del paziente è al centro di tutto ciò che facciamo.
+              </p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-brand-500 rounded-full flex items-center justify-center text-white font-display font-bold text-lg">F</div>
+                <div>
+                  <div class="text-white font-semibold">Dott.ssa Francesca Capasso</div>
+                  <div class="text-brand-200 text-sm">Direttore Sanitario</div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -bottom-4 -right-4 w-full h-full bg-brand-400/20 rounded-3xl -z-0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div class="w-8 h-12 border-2 border-white/30 rounded-full flex justify-center pt-2">
+        <div class="w-1.5 h-3 bg-white/50 rounded-full"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chi Siamo -->
+  <section id="chi-siamo" class="py-24 lg:py-32 bg-white section-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="relative">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img src="http://static.photos/clinic/800x600/88" alt="Interno studio dentistico" class="w-full h-[500px] object-cover" loading="lazy">
+          </div>
+          <div class="absolute -bottom-6 -right-6 bg-brand-600 text-white rounded-2xl p-6 shadow-xl">
+            <div class="text-4xl font-bold font-display">15+</div>
+            <div class="text-brand-100 text-sm">Anni di<br>esperienza</div>
+          </div>
+          <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-100 rounded-2xl -z-10"></div>
+        </div>
+
+        <div>
+          <span class="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm uppercase tracking-[0.15em] mb-4">
+            <span class="w-8 h-[2px] bg-brand-500"></span>
+            Chi Siamo
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Uno Studio dedicato alla tua <span class="text-brand-600">salute orale</span>
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-10 text-lg">
+            Lo Studio Odontoiatrico della Dott.ssa Francesca Capasso nasce dalla passione per l'eccellenza in campo dentale. Il nostro approccio combina competenza professionale, tecnologie innovative e una profonda attenzione al benessere del paziente.
+          </p>
+
+          <div class="space-y-8">
+            <div class="flex gap-5 group">
+              <div class="icon-wrapper flex-shrink-0 w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center transition-all group-hover:bg-brand-600 group-hover:scale-110">
+                <i data-lucide="shield" class="w-6 h-6 text-brand-600 group-hover:text-white transition-colors"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 text-lg mb-1">Prevenzione</h3>
+                <p class="text-gray-600">Programmi di prevenzione personalizzati per mantenere il tuo sorriso sano nel tempo.</p>
+              </div>
+            </div>
+            <div class="flex gap-5 group">
+              <div class="icon-wrapper flex-shrink-0 w-14 h-14 bg-warm-50 rounded-2xl flex items-center justify-center transition-all group-hover:bg-warm-500 group-hover:scale-110">
+                <i data-lucide="heart-handshake" class="w-6 h-6 text-warm-500 group-hover:text-white transition-colors"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 text-lg mb-1">Cura del Paziente</h3>
+                <p class="text-gray-600">Ambiente accogliente e trattamenti painless per il massimo comfort durante ogni visita.</p>
+              </div>
+            </div>
+            <div class="flex gap-5 group">
+              <div class="icon-wrapper flex-shrink-0 w-14 h-14 bg-accent-50 rounded-2xl flex items-center justify-center transition-all group-hover:bg-accent-600 group-hover:scale-110">
+                <i data-lucide="fingerprint" class="w-6 h-6 text-accent-600 group-hover:text-white transition-colors"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 text-lg mb-1">Trattamenti Personalizzati</h3>
+                <p class="text-gray-600">Soluzioni su misura per ogni esigenza, dalle cure estetiche alla riabilitazione completa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servizi -->
+  <section id="servizi" class="py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white section-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm uppercase tracking-[0.15em] mb-4">
+          <span class="w-8 h-[2px] bg-brand-500"></span>
+          I Nostri Servizi
+          <span class="w-8 h-[2px] bg-brand-500"></span>
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Cure complete per <span class="text-brand-600">ogni esigenza</span>
+        </h2>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+          Offriamo una gamma completa di trattamenti odontoiatrici, dalla prevenzione alle cure specialistiche, per tutta la famiglia.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Prevenzione -->
+        <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 shadow-sm group">
+          <div class="icon-wrapper w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 transition-all">
+            <i data-lucide="shield-check" class="w-7 h-7 text-brand-600 group-hover:text-white"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-xl mb-3">Prevenzione Odontoiatrica</h3>
+          <p class="text-gray-600 leading-relaxed">Visite di controllo periodiche, pulizie professionali e trattamenti fluoroprofilattici per prevenire carie e patologie gengivali.</p>
+        </div>
+
+        <!-- Gravidanza -->
+        <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 shadow-sm group">
+          <div class="icon-wrapper w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center mb-6 transition-all">
+            <i data-lucide="baby" class="w-7 h-7 text-pink-500 group-hover:text-white"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-xl mb-3">Odontoiatria in Gravidanza</h3>
+          <p class="text-gray-600 leading-relaxed">Cure dentali sicure e specifiche per le future mamme, con particolare attenzione alla prevenzione delle gengiviti gravidiche.</p>
+        </div>
+
+        <!-- Pediatrica -->
+        <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 shadow-sm group">
+          <div class="icon-wrapper w-14 h-14 bg-warm-50 rounded-2xl flex items-center justify-center mb-6 transition-all">
+            <i data-lucide="smile" class="w-7 h-7 text-warm-500 group-hover:text-white"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-xl mb-3">Odontoiatria Pediatrica</h3>
+          <p class="text-gray-600 leading-relaxed">Approccio gentile e giocoso per i più piccoli, prevenzione precoce e trattamenti adatti a costruire un rapporto positivo con il dentista.</p>
+        </div>
+
+        <!-- Special Needs -->
+        <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 shadow-sm group">
+          <div class="icon-wrapper w-14 h-14 bg-accent-50 rounded-2xl flex items-center justify-center mb-6 transition-all">
+            <i data-lucide="accessibility" class="w-7 h-7 text-accent-600 group-hover:text-white"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-xl mb-3">Pazienti Special Needs</h3>
+          <p class="text-gray-600 leading-relaxed">Cure odontoiatriche dedicate a pazienti con disabilità fisiche, cognitive o comportamentali, con approccio personalizzato e paziente.</p>
+        </div>
+
+        <!-- Ortodonzia -->
+        <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 shadow-sm group">
+          <div class="icon-wrapper w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 transition-all">
+            <i data-lucide="align-center-horizontal" class="w-7 h-7 text-purple-500 group-hover:text-white"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-xl mb-3">Ortodonzia</h3>
+          <p class="text-gray-600 leading-relaxed">Trattamenti ortodontici per bambini e adulti: apparecchi tradizionali, invisibili e tecniche innovative per un sorriso perfetto.</p>
+        </div>
+
+        <!-- Gnatologia -->
+        <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 shadow-sm group">
+          <div class="icon-wrapper w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-6 transition-all">
+            <i data-lucide="activity" class="w-7 h-7 text-teal-500 group-hover:text-white"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-xl mb-3">Gnatologia e Postura</h3>
+          <p class="text-gray-600 leading-relaxed">Diagnosi e cura dei disturbi temporomandibolari (ATM), bruxismo e correlazione tra occlusione dentale e postura corporea.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tecnologie -->
+  <section id="tecnologie" class="py-24 lg:py-32 bg-brand-950 text-white section-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 text-brand-300 font-semibold text-sm uppercase tracking-[0.15em] mb-4">
+            <span class="w-8 h-[2px] bg-brand-400"></span>
+            Tecnologie Avanzate
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+            Innovazione per il tuo <span class="text-brand-300 italic">benessere</span>
+          </h2>
+          <p class="text-gray-300 text-lg leading-relaxed mb-10">
+            Investiamo costantemente nelle tecnologie più avanzate per garantire trattamenti precisi, sicuri e confortevoli.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="glass-card rounded-xl p-4 text-center">
+              <i data-lucide="crosshair" class="w-6 h-6 text-brand-300 mx-auto mb-2"></i>
+              <div class="text-white font-semibold text-sm">Precisazione millimetrica</div>
+            </div>
+            <div class="glass-card rounded-xl p-4 text-center">
+              <i data-lucide="timer" class="w-6 h-6 text-brand-300 mx-auto mb-2"></i>
+              <div class="text-white font-semibold text-sm">Tempi ridotti</div>
+            </div>
+            <div class="glass-card rounded-xl p-4 text-center">
+              <i data-lucide="lock" class="w-6 h-6 text-brand-300 mx-auto mb-2"></i>
+              <div class="text-white font-semibold text-sm">Massima sicurezza</div>
+            </div>
+            <div class="glass-card rounded-xl p-4 text-center">
+              <i data-lucide="sofa" class="w-6 h-6 text-brand-300 mx-auto mb-2"></i>
+              <div class="text-white font-semibold text-sm">Comfort ottimale</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="tech-card glass-card rounded-2xl p-6 border border-white/10 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-brand-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i data-lucide="scan" class="w-6 h-6 text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-lg mb-2">Radiografia Digitale</h3>
+                <p class="text-gray-300">Immagini ad alta definizione con dose di radiazione ridotta del 90% rispetto ai sistemi tradizionali.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-card glass-card rounded-2xl p-6 border border-white/10 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-brand-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i data-lucide="scan-face" class="w-6 h-6 text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-lg mb-2">Scanner Intraorale</h3>
+                <p class="text-gray-300">Impronte digitali precise e confortevoli, senza bisogno di materiali tradizionali per modelli in gesso.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-card glass-card rounded-2xl p-6 border border-white/10 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-brand-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-lg mb-2">Laser Dentistry</h3>
+                <p class="text-gray-300">Trattamenti soft tissue painless, cicatrizzazione accelerata e procedure minimamente invasive.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-card glass-card rounded-2xl p-6 border border-white/10 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-brand-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i data-lucide="badge-check" class="w-6 h-6 text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-lg mb-2">Sistemi di Sterilizzazione</h3>
+                <p class="text-gray-300">Protocolli rigorosi e strumenti monouso per garantire la massima sicurezza igienica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Perché Sceglierci -->
+  <section id="perché-noi" class="py-24 lg:py-32 bg-white section-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm uppercase tracking-[0.15em] mb-4">
+          <span class="w-8 h-[2px] bg-brand-500"></span>
+          Perché Sceglierci
+          <span class="w-8 h-[2px] bg-brand-500"></span>
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Perché scegliere il <span class="text-brand-600">nostro Studio</span>
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div class="value-card text-center p-6 rounded-2xl border border-gray-100 bg-white shadow-sm group">
+          <div class="value-icon w-16 h-16 bg-brand-50 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-all">
+            <i data-lucide="graduation-cap" class="w-8 h-8 text-brand-600 group-hover:text-white"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-lg mb-2">Professionalità</h3>
+          <p class="text-gray-500 text-sm">Formazione continua e aggiornamento costante sulle tecniche più moderne.</p>
+        </div>
+
+        <div class="value-card text-center p-6 rounded-2xl border border-gray-100 bg-white shadow-sm group">
+          <div class="value-icon w-16 h-16 bg-accent-50 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-all">
+            <i data-lucide="cpu" class="w-8 h-8 text-accent-600 group-hover:text-white"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-lg mb-2">Tecnologia</h3>
+          <p class="text-gray-500 text-sm">Strumentazione all'avanguardia per diagnosi precise e trattamenti efficaci.</p>
+        </div>
+
+        <div class="value-card text-center p-6 rounded-2xl border border-gray-100 bg-white shadow-sm group">
+          <div class="value-icon w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-all">
+            <i data-lucide="fingerprint" class="w-8 h-8 text-purple-500 group-hover:text-white"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-lg mb-2">Personalizzazione</h3>
+          <p class="text-gray-500 text-sm">Piani di trattamento su misura per le esigenze specifiche di ogni paziente.</p>
+        </div>
+
+        <div class="value-card text-center p-6 rounded-2xl border border-gray-100 bg-white shadow-sm group">
+          <div class="value-icon w-16 h-16 bg-warm-50 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-all">
+            <i data-lucide="sofa" class="w-8 h-8 text-warm-500 group-hover:text-white"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-lg mb-2">Comfort</h3>
+          <p class="text-gray-500 text-sm">Ambiente accogliente e rilassante, cure painless e approccio delicato.</p>
+        </div>
+
+        <div class="value-card text-center p-6 rounded-2xl border border-gray-100 bg-white shadow-sm group">
+          <div class="value-icon w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-all">
+            <i data-lucide="shield-check" class="w-8 h-8 text-teal-500 group-hover:text-white"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-lg mb-2">Prevenzione</h3>
+          <p class="text-gray-500 text-sm">Focus prioritario sulla prevenzione per mantenere la salute dentale nel tempo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonianze -->
+  <section id="testimonianze" class="py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white section-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm uppercase tracking-[0.15em] mb-4">
+          <span class="w-8 h-[2px] bg-brand-500"></span>
+          Testimonianze
+          <span class="w-8 h-[2px] bg-brand-500"></span>
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Cosa dicono i nostri <span class="text-brand-600">pazienti</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 relative">
+          <div class="font-display text-6xl text-brand-100 absolute top-4 right-6 leading-none">"</div>
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-12 h-12 bg-brand-600 rounded-full flex items-center justify-center text-white font-display font-bold text-lg">MR</div>
+            <div>
+              <div class="font-bold text-gray-900">Maria Rossi</div>
+              <div class="text-gray-500 text-sm">Paziente dal 2021</div>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+          </div>
+          <p class="text-gray-600 leading-relaxed relative z-10">
+            Professionalità, gentilezza e competenza eccezionali. La Dott.ssa Capasso ha risolto un problema che mi portavo dietro da anni. Finalmente posso sorridere senza imbarazzo!
+          </p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 relative">
+          <div class="font-display text-6xl text-brand-100 absolute top-4 right-6 leading-none">"</div>
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-12 h-12 bg-accent-600 rounded-full flex items-center justify-center text-white font-display font-bold text-lg">LB</div>
+            <div>
+              <div class="font-bold text-gray-900">Luca Bianchi</div>
+              <div class="text-gray-500 text-sm">Genitore</div>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+          </div>
+          <p class="text-gray-600 leading-relaxed relative z-10">
+            Porto mia figlia da 3 anni in questo studio. L'approccio con i bambini è fantastico, nessuna paura del dentista! Ambiente pulito, moderno e personale sempre disponibile.
+          </p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 relative">
+          <div class="font-display text-6xl text-brand-100 absolute top-4 right-6 leading-none">"</div>
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-display font-bold text-lg">GV</div>
+            <div>
+              <div class="font-bold text-gray-900">Giulia Verdi</div>
+              <div class="text-gray-500 text-sm">Paziente ortodontica</div>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-warm-400 text-warm-400"></i>
+          </div>
+          <p class="text-gray-600 leading-relaxed relative z-10">
+            Ho fatto un trattamento di gnatologia per problemi all'ATM. Risultati incredibili, non solo ho risolto il dolore alla mandibola ma ho migliorato anche la mia postura generale.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contatti -->
+  <section id="contatti" class="py-24 lg:py-32 bg-white section-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm uppercase tracking-[0.15em] mb-4">
+          <span class="w-8 h-[2px] bg-brand-500"></span>
+          Contatti
+          <span class="w-8 h-[2px] bg-brand-500"></span>
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Prenota la tua <span class="text-brand-600">visita</span>
+        </h2>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+          Siamo qui per aiutarti. Contattaci per fissare un appuntamento o per qualsiasi informazione.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Info di Contatto -->
+        <div class="space-y-6">
+          <h3 class="font-bold text-gray-900 text-2xl font-display mb-8">Informazioni di Contatto</h3>
+
+          <div class="flex items-start gap-5 p-5 bg-gray-50 rounded-2xl hover:bg-brand-50 transition-colors group">
+            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-600 transition-colors">
+              <i data-lucide="map-pin" class="w-6 h-6 text-brand-600 group-hover:text-white transition-colors"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Indirizzo</h4>
+              <p class="text-gray-600">Via Roma, 123</p>
+              <p class="text-gray-600">80100 Napoli (NA)</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-5 p-5 bg-gray-50 rounded-2xl hover:bg-brand-50 transition-colors group">
+            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-600 transition-colors">
+              <i data-lucide="phone" class="w-6 h-6 text-brand-600 group-hover:text-white transition-colors"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Telefono</h4>
+              <p class="text-gray-600">+39 081 123 4567</p>
+              <p class="text-gray-600">WhatsApp: +39 333 123 4567</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-5 p-5 bg-gray-50 rounded-2xl hover:bg-brand-50 transition-colors group">
+            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-600 transition-colors">
+              <i data-lucide="mail" class="w-6 h-6 text-brand-600 group-hover:text-white transition-colors"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Email</h4>
+              <p class="text-gray-600">info@studiocapasso.it</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-5 p-5 bg-gray-50 rounded-2xl hover:bg-brand-50 transition-colors group">
+            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-600 transition-colors">
+              <i data-lucide="clock" class="w-6 h-6 text-brand-600 group-hover:text-white transition-colors"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Orari di Apertura</h4>
+              <p class="text-gray-600">Lun - Ven: 9:00 - 13:00 / 15:00 - 20:00</p>
+              <p class="text-gray-600">Sab: 9:00 - 13:00</p>
+              <p class="text-gray-600">Dom: Chiuso</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mappa -->
+        <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-200 h-[500px] lg:h-auto">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2868.5836796934784!2d14.2476!3d40.8518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b775e7e5f7e7d%3A0x7e0e0e0e0e0e0e0e!2sVia%20Roma%2C%20123%2C%2080100%20Napoli%20NA!5e0!3m2!1sit!2sit!4v1700000000000"
+            width="100%"
+            height="100%"
+            style="border:0; min-height: 500px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kids CTA -->
+  <section class="py-16 bg-gradient-to-r from-brand-600 to-brand-700 section-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="text-center md:text-left">
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mb-3">
+            🧒 Hai paura del dentista?
+          </h2>
+          <p class="text-brand-100 text-lg">Scopri i nostri consigli per superare la paura, scritti apposta per te!</p>
+        </div>
+        <a href="paura.html" class="inline-flex items-center gap-2 bg-white text-brand-700 font-bold px-8 py-4 rounded-xl hover:bg-brand-50 transition-all hover:-translate-y-0.5 shadow-lg">
+          <i data-lucide="smile" class="w-5 h-5"></i>
+          Vai alla pagina per i bambini
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <!-- Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center">
+              <i data-lucide="heart-pulse" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+              <div class="font-display text-lg font-bold text-white leading-tight">Studio Capasso</div>
+              <div class="text-[10px] uppercase tracking-[0.2em] text-brand-400 font-semibold">Odontoiatria</div>
+            </div>
+          </div>
+          <p class="text-gray-500 text-sm leading-relaxed">Cura, prevenzione e benessere per la salute del tuo sorriso.</p>
+        </div>
+
+        <!-- Servizi -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Servizi</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#servizi" class="hover:text-brand-400 transition-colors">Prevenzione</a></li>
+            <li><a href="#servizi" class="hover:text-brand-400 transition-colors">Odontoiatria Pediatrica</a></li>
+            <li><a href="#servizi" class="hover:text-brand-400 transition-colors">Ortodonzia</a></li>
+            <li><a href="#servizi" class="hover:text-brand-400 transition-colors">Gnatologia</a></li>
+          </ul>
+        </div>
+
+        <!-- Studio -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Studio</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#chi-siamo" class="hover:text-brand-400 transition-colors">Chi Siamo</a></li>
+            <li><a href="#tecnologie" class="hover:text-brand-400 transition-colors">Tecnologie</a></li>
+            <li><a href="#testimonianze" class="hover:text-brand-400 transition-colors">Testimonianze</a></li>
+            <li><a href="paura.html" class="hover:text-brand-400 transition-colors">Per i Bambini</a></li>
+          </ul>
+        </div>
+
+        <!-- Contatti -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Contatti</h4>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-brand-400"></i>+39 081 123 4567</li>
+            <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-brand-400"></i>info@studiocapasso.it</li>
+            <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-brand-400 mt-0.5"></i>Via Roma, 123 - 80100 Napoli</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-500">&copy; 2024 Studio Odontoiatrico Dott.ssa Francesca Capasso. Tutti i diritti riservati.</p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-brand-600 transition-colors">
+            <i data-lucide="facebook" class="w-5 h-5 text-gray-400 hover:text-white"></i>
+          </a>
+          <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-brand-600 transition-colors">
+            <i data-lucide="instagram" class="w-5 h-5 text-gray-400 hover:text-white"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+
+    
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const closeMenu = document.getElementById('closeMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('translate-x-full');
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+      });
+    });
+
+    // Section reveal on scroll
+    const sections = document.querySelectorAll('.section-reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      revealObserver.observe(section);
+    });
+
+    // Active nav link on scroll
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sectionIds = ['chi-siamo', 'servizi', 'tecnologie', 'perché-noi', 'testimonianze', 'contatti'];
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sectionIds.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) {
+            current = id;
+          }
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('nav-active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('nav-active');
+        }
+      });
+    });
+  </script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
